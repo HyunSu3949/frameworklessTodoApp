@@ -9,3 +9,9 @@ export type ComponentFunction = (targetElement: HTMLElement, state: AppState, ev
 export type Todo = {text: string, completed:boolean};
 export type Todos = Todo[]
 
+export interface TodoElement extends HTMLElement {
+  querySelector(selector: 'input.edit'): HTMLInputElement;
+  querySelector(selector: 'input.toggle'): HTMLInputElement;
+  querySelector(selector: 'label'): HTMLLabelElement;
+  querySelector(selector: 'button.destroy'): HTMLLabelElement;
+}

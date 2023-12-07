@@ -1,14 +1,19 @@
-import type { Events, AppState, ComponentFunction } from "../types";
-
+import type { Events, ComponentFunction } from "../types";
 
 const getTemplate = () => {
-  const templete = document.getElementById('todo-app');
-
-  if (!(templete instanceof HTMLTemplateElement)) {
-    throw new Error('todo-app 아이디가 맞는지 확인하세요');
+  const template = document.getElementById('todo-app');
+  
+  if (!(template instanceof HTMLTemplateElement)) {
+    throw new Error('todo-item 아이디가 맞는지 확인하세요');
   }
 
-  return templete.content.firstElementChild?.cloneNode(true) as Node;
+  const clonedNode = template.content.firstElementChild?.cloneNode(true);
+
+  if (!clonedNode) {
+    throw new Error('Template 의 자식 요소가 없습니다');
+  }
+
+  return clonedNode as HTMLElement;
 }
 
 const addEvents = (targetElement: HTMLElement, events: Events) => {

@@ -1,4 +1,4 @@
-import type { Events, Registry, ComponentFunction } from "./types"
+import type { Registry, ComponentFunction } from "./types"
 const registry : Registry = {}
 
 const renderWrapper = (component:ComponentFunction): ComponentFunction => {

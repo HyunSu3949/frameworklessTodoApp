@@ -3,11 +3,15 @@ import { Events, AppState } from './types.ts'
 import appView from './view/app.ts'
 import counterView from './view/counter.ts';
 import applyDiff from './applyDiff.ts'
+import todosView from './view/todos.ts'
+import filtersView from './view/filters.js'
 
 import registry from './registry.ts'
 
 registry.add('app', appView)
+registry.add('todos', todosView)
 registry.add('counter', counterView)
+registry.add('filters', filtersView)
 
 const state:AppState = {
   todos: [],
