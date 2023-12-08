@@ -7,7 +7,8 @@ const renderWrapper = (component:ComponentFunction): ComponentFunction => {
 
     const childComponents: NodeListOf<HTMLElement> = element
       .querySelectorAll('[data-component]')
-
+    console.log(childComponents);
+    
     Array
       .from(childComponents)
       .forEach((target) => {

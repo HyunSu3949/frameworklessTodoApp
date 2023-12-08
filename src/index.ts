@@ -1,12 +1,12 @@
-import { Events, AppState } from './types.ts'
+import { Events, AppState } from './types.js'
 
-import appView from './view/app.ts'
-import counterView from './view/counter.ts';
-import applyDiff from './applyDiff.ts'
-import todosView from './view/todos.ts'
-import filtersView from './view/filters.js'
+import appView from './view/app'
+import counterView from './view/counter'
+import applyDiff from './applyDiff'
+import todosView from './view/todos'
+import filtersView from './view/filters'
 
-import registry from './registry.ts'
+import registry from './registry'
 
 registry.add('app', appView)
 registry.add('todos', todosView)
@@ -44,7 +44,8 @@ const render = () => {
       main,
       state,
       events)
-
+    console.log(newMain);
+    
     applyDiff(document.body, main, newMain)
   })
 }
