@@ -44,7 +44,6 @@ const render = () => {
       main,
       state,
       events)
-    console.log(newMain);
     
     applyDiff(document.body, main, newMain)
   })

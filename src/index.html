@@ -11,6 +11,26 @@
 </head>
 
 <body>
+    <template id='footer'>
+        <footer class='footer'>
+            <span class='todo-count'>
+            </span>
+            <ul class='filters'>
+                <li>
+                    <a href="#/">All</a>
+                </li>
+                <li>
+                    <a href="#/active">Active</a>
+                </li>
+                <li>
+                    <a href="#/completed">Completed</a>
+                </li>
+            </ul>
+            <button class="'clear-completed">
+                Clear completed
+            </button>
+        </footer>
+    </template>
     <template id="todo-item">
         <li>
             <div class="view">
@@ -32,37 +52,12 @@
                 <label for="toggle-all">
                     Mark all as complete
                 </label>
-                <ul class="todo-list" data-component="todos">
-                </ul>
+                <todomvc-list></todomvc-list>
             </section>
-            <footer class="footer">
-                <span class="todo-count" data-component="counter">
-                </span>
-                <ul class="filters" data-component="filters">
-                    <li>
-                        <a href="#/">All</a>
-                    </li>
-                    <li>
-                        <a href="#/active">Active</a>
-                    </li>
-                    <li>
-                        <a href="#/completed">Completed</a>
-                    </li>
-                </ul>
-                <button class="clear-completed">
-                    Clear completed
-                </button>
-            </footer>
+            <todomvc-footer></todomvc-footer>
         </section>
     </template>
-    <div id="root">
-        <div data-component="app"></div>
-    </div>
-    <footer class="info">
-        <p>Double-click to edit a todo</p>
-        <p>Created by <a href="http://twitter.com/thestrazz86">Francesco Strazzullo</a></p>
-        <p>Thanks to <a href="http://todomvc.com">TodoMVC</a></p>
-    </footer>
+    <todomvc-app></todomvc-app>
     <script type="module" src="index.js"></script>
 </body>
 
